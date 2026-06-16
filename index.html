@@ -211,7 +211,7 @@
 {"quote": "문구 내용", "sub": "설명 한 줄"}`;
 
     try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch("https://api.anthropic.com/v1/messages?_=" + Date.now(), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
