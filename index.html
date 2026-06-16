@@ -235,6 +235,19 @@
   }
 
   loadQuote();
+
+  // 매 정각에 자동 새로고침
+  function scheduleNextRefresh() {
+    const now = new Date();
+    const nextHourTime = new Date(now);
+    nextHourTime.setHours(now.getHours() + 1, 0, 0, 0);
+    const msUntilNextHour = nextHourTime - now;
+    setTimeout(() => {
+      location.reload();
+    }, msUntilNextHour);
+  }
+
+  scheduleNextRefresh();
 </script>
 </body>
 </html>
