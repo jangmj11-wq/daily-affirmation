@@ -188,7 +188,7 @@
   const start = new Date(today.getFullYear(), 0, 0);
   const dayOfYear = Math.floor((today - start) / 86400000);
   const currentHour = today.getHours();
-  const seed = `${today.getFullYear()}-${dayOfYear}-${currentHour}`;
+  const seed = `${today.getFullYear()}-${dayOfYear}-${currentHour}-${Math.random().toString(36).slice(2,7)}`;
 
   const nextHour = new Date(today);
   nextHour.setHours(currentHour + 1, 0, 0, 0);
